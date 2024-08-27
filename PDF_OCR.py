@@ -124,17 +124,18 @@ def convert_word_to_pdf(word_filename, pdf_filename):
 
 if __name__ == "__main__":
     # Replace 'input_file.pdf' with the path to your PDF file
-    pdf_name = 'CORPORACIÓN HOGAR BELEN'
+    pdf_name = 'PUT THE FILENAME OF THE PDF HERE'
     pdf_file = pdf_name + '.pdf'
     text_from_pdf = extract_text_from_pdf(pdf_file)
 
     # Save the extracted text to a Word document
-    pdf_filename = pdf_name + ' word_salida.docx'
-    save_to_word(text_from_pdf, pdf_filename)
+    word_filename = pdf_name + '_output.docx'
+    save_to_word(text_from_pdf, word_filename)
 
     # Convert to a PDF
-    pdf_filename = 'output_word.pdf'
-    convert_word_to_pdf(os.path.abspath(pdf_filename), os.path.abspath(pdf_filename))
+    pdf_output_filename = pdf_name + '_output.pdf'
+    convert_word_to_pdf(os.path.abspath(word_filename), os.path.abspath(pdf_output_filename))
+
 
     print("Text extraction complete. Word and PDF files have been saved.")
 
